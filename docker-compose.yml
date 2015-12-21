@@ -1,0 +1,12 @@
+mq:
+  image: rabbitmq
+  ports:
+    - "4369:4369"
+    - "5671:5671"
+    - "5672:5672"
+    - "15672:15672"
+    - "25672:25672"
+  environment:
+    - RABBITMQ_PASS=myrabbitpass
+  volumes:
+    - ./data/rabbitmq:/var/lib/rabbitmq
