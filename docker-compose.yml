@@ -1,12 +1,12 @@
 mq:
-  image: rabbitmq
+  image: rabbitmq:3-management
   ports:
-    - "4369:4369"
-    - "5671:5671"
     - "5672:5672"
     - "15672:15672"
-    - "25672:25672"
   environment:
-    - RABBITMQ_PASS=myrabbitpass
+    - RABBITMQ_DEFAULT_USER=guest
+    - RABBITMQ_DEFAULT_PASS=guest
   volumes:
     - ./data/rabbitmq:/var/lib/rabbitmq
+    - ./data/log:/data/log
+    - ./data/mnesia:/data/mnesia
